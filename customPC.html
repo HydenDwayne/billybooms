@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BillyBooms Computers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #ffd700; /* gold text color */
+            min-height: 100vh; /* Set minimum height to 100% of viewport height */
+            position: relative;
+            padding-top: 60px; /* Adjust the padding-top based on your header height */
+        }
+
+        /*header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #202020;
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            z-index: 1000;
+            }
+
+        .navBtn {
+            padding: 0px;
+            position: absolute;
+            top: 30px;
+            right: 70px;
+            outline: none;
+        }*/
+        
+        header a {
+            color: #ffd700;
+            margin: 10px;
+            font-family:monospace;
+            font-weight: bolder;
+        }
+
+        header a:link, a:visited {
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        header a:hover, a:active {
+            color: #ffd900c9;
+        }
+
+        /*header img {
+            width: 70px;
+            height: auto;
+            cursor: pointer;
+            position: relative;
+            right: 45%;
+        }*/
+
+        section {
+            padding: 20px;
+            margin-right: 20%;
+            margin-left: 20%;
+        }
+
+        h2 {
+            font-weight: bold;
+            font-family: Arial;
+            font-style: italic;
+            padding-bottom: 10px;
+        }
+
+
+        h3 {
+            color: #ffd700; /* golden text color */
+        }
+
+        ul,
+        li {
+            color: white;
+            font-size: 120%;
+            list-style-type: none;
+            text-align: justify;
+        }
+
+        @media screen and (max-width: 1920px) {
+            section {
+                margin-right: 0%;
+                margin-left: 0%;
+            }
+
+            ul,
+            li {
+                color: white;
+                font-size: 110%;
+                list-style-type: none;
+                text-align: justify;
+            }
+        }
+
+        .carousel-inner img {
+            border-radius: 15px; /* rounded corners for carousel images */
+            width: 100%;
+            height: 400px; /* fixed height for the carousel */
+            object-fit: cover;
+            border-style: solid;
+            border-color: #ffffff;
+        }
+
+
+        .carousel-item {
+            height: 400px; /* fixed height for the carousel items */
+        }
+
+        .landing-page {
+            text-align: center;
+            padding: 50px;
+            background-color: #000;
+            margin-right: 0%;
+            margin-left: 0%;
+        }
+
+        .landing-page h1 {
+            font-size: 400%;
+            margin-bottom: 20px;
+            color: #ffd700;
+            font-weight: 900;
+            font-style: italic;
+            font-family: Arial;
+        }
+
+        .landing-page p {
+            font-size: 1.5em;
+            color: #ffffff;
+        }
+
+        .landing-page button {
+            background-color: #ffd700;
+            color: #000;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 20px;
+            margin-top: 40px;
+            cursor: pointer;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .pckgBtn {
+            background-color: #ffd700;
+            color: #000;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 20px;
+            margin-top: 100px;
+            cursor: pointer;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            position: relative;
+            left: 40%;
+        }
+
+        footer {
+            background-color: #fff; /* white footer */
+            color: #000;
+            text-align: center;
+            padding: 20px;
+            position: absolute;
+            width: 100%;
+            margin-top: 100px;
+        }
+
+        .carousel-control-prev {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%);
+        }
+
+        .carousel-control-next {
+            position: absolute;
+            top: 0;
+            left: 87%;
+        }
+
+
+        .carousel-caption {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: 100%;
+            padding-top: 20px; /* Adjust as needed for spacing */
+        }
+
+        .rounded-square {
+            background-color: #fff; /* white background */
+            border-radius: 15px; /* rounded corners */
+            overflow: hidden; /* ensure content within the rounded-square stays within boundaries */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        .rounded-square img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            
+        }
+
+        .text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .customPC h1 {
+            font-size: 400%;
+            margin-bottom: 20px;
+            color: #ffd700;
+            font-weight: 900;
+            font-style: italic;
+            font-family: Arial;
+            margin-top: 100px;
+        }
+
+        .customPC p {
+            font-size: 1.5em;
+            color: #ffffff;
+        }
+
+        .customPC button {
+            background-color: #ffd700;
+            color: #000;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 20px;
+            margin-top: 40px;
+            cursor: pointer;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        
+
+    </style>
+
+</head>
+
+<header>
+    <img src="logo.jpg" alt="Logo" onclick="location.href='index.html'" style="border-radius: 50%;" />
+    <div class="navBtn">
+        <a href="packages.html">Packages</a>
+        <a href="components.html">Components</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="https://www.facebook.com/BillyboomsComputers" onclick= "scrollToCustomPC ('#customPC')">Custom Build</a>
+    </div>
+    
+</header>
+
+<body>
+
+    <section id="customPC" class="customPC">
+        <h1>Want a custom built PC?</h1>
+        <p>Do you seek an absolute beast of a unit? or do you want something that fits in your budget? Either way, we can help you with whatever you need including but not limited to; </p>
+        <ul>
+            <li>* Free quotation,</li>
+            <li>* Lifetime customer support,</li>
+            <li>* Affordable prices,</li>
+            <li>* Packaged deals, and MORE!</li>
+        </ul>
+        <a href="https://www.facebook.com/BillyboomsComputers" target="_blank"><button>Inquire Now!</button></a>
+
+        <br><br><br><br>
+    </section>
+
+    <section id="trustedBy">
+        <h2 style="text-align: center;">Trusted by</h2>
+        <h3 style="font-style: italic;">--insert partners and influencers--</h3>
+    </section>
+    
+
+    <!-- Bootstrap JS and jQuery scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 5000); // Change slide every 3 seconds
+        }
+    </script>
+
+    <script>
+        function scrollToSection(sectionId) {
+            var section = document.querySelector(sectionId);
+            if (section) {
+                var startingY = window.scrollY;
+                var targetY = section.getBoundingClientRect().top + window.scrollY;
+
+                var startTime;
+                function scrollAnimation(currentTime) {
+                    if (startTime === undefined) {
+                        startTime = currentTime;
+                    }
+                    var timeElapsed = currentTime - startTime;
+                    var progress = Math.min(timeElapsed / 1000, 1); // Duration is 3000 milliseconds (3 seconds)
+
+                    window.scrollTo(0, startingY + progress * (targetY - startingY));
+
+                    if (timeElapsed < 1000) {
+                        requestAnimationFrame(scrollAnimation);
+                    }
+                }
+
+                requestAnimationFrame(scrollAnimation);
+            }
+        }
+
+
+        function scrollToCustomPC(sectionId) {
+            var section = document.querySelector(sectionId);
+            if (section) {
+                var startingY = window.scrollY;
+                var targetY = section.getBoundingClientRect().top + window.scrollY;
+
+                var startTime;
+                function scrollAnimation(currentTime) {
+                    if (startTime === undefined) {
+                        startTime = currentTime;
+                    }
+                    var timeElapsed = currentTime - startTime;
+                    var progress = Math.min(timeElapsed / 500, 1); // Duration is 3000 milliseconds (3 seconds)
+
+                    window.scrollTo(0, startingY + progress * (targetY - startingY));
+
+                    if (timeElapsed < 500) {
+                        requestAnimationFrame(scrollAnimation);
+                    }
+                }
+
+                requestAnimationFrame(scrollAnimation);
+            }
+        }
+    </script>
+
+
+</body>
+
+<footer>
+    <p>&copy; 2024 BillyBooms Computers. All rights reserved.</p>
+    <p>Contact us: facebook.com/BillyboomsComputers <br> 09328675581 </p>
+    <p>Address:  Calle Rizal St., Brgy. Tibag, Baliwag, Bulacan</p>
+</footer>
+
+</html>
